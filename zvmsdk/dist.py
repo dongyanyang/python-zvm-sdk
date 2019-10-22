@@ -17,6 +17,7 @@ import abc
 import netaddr
 import os
 import six
+import sys
 from jinja2 import Environment, FileSystemLoader
 
 from zvmsdk import config
