@@ -268,6 +268,12 @@ class SDKAPITestCase(base.SDKTestCase):
         self.api.guest_resize_mem(self.userid, size)
         resize_memory.assert_called_once_with(self.userid, size)
 
+    @mock.patch("zvmsdk.vmops.VMOps.guest_grow_partition")
+    def test_guest_grow_partition(self, grow_partition):
+        os_version = "RHEL7.8"
+        self.api.guest_grow_partition(self.userid, os_version)
+        grow_partition.assert_called_once_with(self.userid, os_version)
+
     @mock.patch("zvmsdk.networkops.NetworkOPS.grant_user_to_vswitch")
     def test_vswitch_grant_user(self, guv):
         self.api.vswitch_grant_user("testvsw", self.userid)

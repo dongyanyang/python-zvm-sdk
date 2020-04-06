@@ -354,6 +354,12 @@ class VMAction(object):
 
         return info
 
+    @validation.schema(guest.grow_partition)
+    def grow_partition(self, userid, body=None):
+        info = self.client.send_request('guest_grow_partition', userid,
+                                        body['os_version'])
+        return info
+
     @validation.schema(guest.deploy)
     def deploy(self, userid, body):
         image_name = body['image']

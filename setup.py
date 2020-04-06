@@ -50,6 +50,7 @@ setuptools.setup(
              'scripts/zvmsdk-gentoken'],
     data_files=[('/lib/systemd/system', ['data/sdkserver.service']),
                 ('/var/lib/zvmsdk', ['data/setupDisk']),
+                ('/var/lib/zvmsdk', ['data/gpartvol.sh']),
                 ('/etc/sudoers.d', ['data/sudoers-zvmsdk']),
                 ('/etc/zvmsdk', ['data/uwsgi-zvmsdk.conf']),
                 ('/etc/zvmsdk', ['doc/source/zvmsdk.conf.sample'])],
